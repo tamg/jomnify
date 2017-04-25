@@ -29,13 +29,17 @@ searchBtn.addEventListener('click', function(e){
   .then(data => {
     reset()
     data.forEach(function(track) {
-      var href = track.tracks.href
-      var searchTerm = href.split('').slice(href.indexOf('3A')+2 , href.indexOf('&')).join('')
-      var title = track.tracks.items["0"].name || ''
-      var artist = track.tracks.items["0"].artists["0"].name || ''
-      var link = track.tracks.items["0"].external_urls.spotify || ''
+      
+      if(track.tracks.items["0"]) { // if the track exists
+        var href = track.tracks.href
+        var searchTerm = href.split('').slice(href.indexOf('3A')+2 , href.indexOf('&')).join('')
+        var title = track.tracks.items["0"].name || ''
+        var artist = track.tracks.items["0"].artists["0"].name || ''
+        var link = track.tracks.items["0"].external_urls.spotify || ''
 
-      displayTrack(searchTerm, title, artist, link)
+        displayTrack(searchTerm, title, artist, link)
+      }
+
     })
   })
   .catch(reason => {
