@@ -1,0 +1,20 @@
+body {
+  padding-top: 40px;
+  background:#ffc600;
+}
+
+.main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  margin: 0 auto;
+  margin-top: 10px;
+  display: block;
+}
