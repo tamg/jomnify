@@ -11,13 +11,27 @@ body {
 .main {
   max-width: 700px;
   margin: 0 auto;
-  padding-top: 70px
+  padding-top: 20px
+}
+
+.about {
+  color: #6E7783;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1.3em;
+}
+
+.about a {
+  color: white;
+  font-weight: 100;
 }
 
 input {
   width: 100%;
   padding: 10px;
   font-size: 25px;
+  font-weight: 100;
   display: block;
 }
 
@@ -30,6 +44,7 @@ input {
   border: 1px solid white;
   border-radius: 5px;
   background: white;
+  color: #6E7783;
 }
 
 .btn:hover {
@@ -63,13 +78,5 @@ span.artist {
 }
 
 a.track {
-  color: rgb(223, 232, 224);
-}
-
-.about {
   color: white;
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: 100;
-  line-height: 1.3em;
 }
