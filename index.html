@@ -7,11 +7,63 @@
   <link rel="stylesheet" href="./css/style.css">
   <body>
     <div class="main">
-      <input type="text" name="" class="txt">
-      <button type="button" name="button" class="btn">jomnify</button>
+      <div class="about">
+        <p> Inspired <a href="https://twitter.com/jonnysun/status/856382394022154243" target='_blank'>by this tweet</a> from Jomny Sun. </p>
+        <p> Search for a sentence and you will get back a list of songs from spotify that contain each word in the sentence! </p>
+        <p> Created by <a href='http://tamrat.co' target='_blank'> @tamrrat</a> at the <a href='https://www.recurse.com/' target='_blank'>Recurse center.</a> Github <a href='https://github.com/tamg/jomnify' target='_blank'>link</a> </p>
+      </div>
+      <input type="text" name="" class="txt" placeholder="search and the song list will appear below">
+      <button type="button" name="button" class="btn" id="search">jomnify</button>
       <ul class="result">
-        <li>Result</li>
+        <li>
+          <a class="track" href="https://open.spotify.com/track/0SuLAslEMFZAXf0SwY7syi" target="_blank"><span class="searchTerm">All</span> Time Low</a> <span class="artist"> by Jon Bellion </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/0d0jsoba88SpOoFxCxA2rZ" target="_blank">The <span class="searchTerm">Art</span> of Peer Pressure</a> <span class="artist"> by Kendrick Lamar </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/0azC730Exh71aQlOt9Zj3y" target="_blank">This <span class="searchTerm">Is</span> What You Came For</a> <span class="artist"> by Calvin Harris </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/7mldq42yDuxiUNn08nvzHO" target="_blank">Body Like <span class="searchTerm">A</span> Back Road</a> <span class="artist"> by Sam Hunt </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/1Bqxj0aH5KewYHKUg1IdrF" target="_blank">Some <span class="searchTerm">Kind</span> Of Drug</a> <span class="artist"> by G-Eazy </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/0FE9t6xYkqWXU2ahLh6D8X" target="_blank">Shape <span class="searchTerm">of</span> You</a> <span class="artist"> by Ed Sheeran </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/6IFPfV8PNSYOmufzQ95hmm" target="_blank"><span class="searchTerm">Confession</span></a> <span class="artist"> by Florida Georgia Line </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/3qP5nPy0qh7iodfLMBsfbr" target="_blank"><span class="searchTerm">More</span> Girls Like You</a> <span class="artist"> by Kip Moore </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/3Px934J0dBoCmpUhUuCQkD" target="_blank">Now <span class="searchTerm">Or</span> Never</a> <span class="artist"> by Halsey </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/4JjIIBNoho0V2gZjH4nEzR" target="_blank">Think A Little <span class="searchTerm">Less</span></a> <span class="artist"> by Michael Ray </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/6m3ZWIXhjoV76syT1j2oE9" target="_blank">Coming Over (feat. <span class="searchTerm">James</span> Hersey)</a> <span class="artist"> by Dillon Francis </span>
+        </li>
+
+        <li>
+          <a class="track" href="https://open.spotify.com/track/6EAE96fgYkea6qZ3pXigNG" target="_blank">Mad (feat. Devon <span class="searchTerm">Baldwin)</span></a> <span class="artist"> by G-Eazy </span>
+        </li>
       </ul>
+
     </div>
 
     <script type="text/javascript" src="./js/spotify-web-api.js"></script>

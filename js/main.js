@@ -1,37 +1,72 @@
-var btn = document.querySelector('.btn')
+var searchBtn = document.querySelector('#search')
+var resetBtn = document.querySelector('#reset')
 var input = document.querySelector('input')
-var result = document.querySelector('result')
+var result = document.querySelector('.result')
 
-btn.addEventListener('click', function(e){
+searchBtn.addEventListener('click', function(e){
   e.preventDefault()
-  var terms = input.value.split(' ') //split full sentense
 
-  //for each term search spotify api
-  terms.forEach(term => search(term))
-})
-
-function search(queryTerm) {
-  var spotify = new SpotifyWebApi();
-
-
-  var prev = null
-  // abort previous request, if any
-  if (prev !== null) {
-    prev.abort();
+  //clean and store each word in the search sentence
+  if(input.value) {
+    var terms = input.value.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").split(' ')
+  } else {
+    return
   }
 
-  // store the current promise in case we need to abort it
-  return spotify.searchTracks(queryTerm, {limit: 1})
-    .then(function(data) {
+  if(terms && terms.length > 75){
+    terms = terms.splice(0,75)
+  }
 
-      // clean the promise so it doesn't call abort
-      prev = null;
+  var promises = []
 
-      // var track =
-      // result.innerHTML += data.tracks.items['0'].external_urls.spotify
-      console.log(data.tracks.items['0'].external_urls.spotify);
+  //for each search term search spotify api and push to promise array
+  terms.forEach(function(term) {
+    term = 'track:' + term
+    promises.push(search(term))
+  })
 
-    }, function(err) {
-      console.error(err);
-    });
+  Promise.all(promises)
+  .then(data => {
+    reset()
+    data.forEach(function(track) {
+      var href = track.tracks.href
+      var searchTerm = href.split('').slice(href.indexOf('3A')+2 , href.indexOf('&')).join('')
+      var title = track.tracks.items["0"].name || ''
+      var artist = track.tracks.items["0"].artists["0"].name || ''
+      var link = track.tracks.items["0"].external_urls.spotify || ''
+
+      displayTrack(searchTerm, title, artist, link)
+    })
+  })
+  .catch(reason => {
+    console.error(reason)
+  })
+})
+
+function reset() {
+  result.innerHTML = ''
+}
+
+function search(term) {
+  var spotify = new SpotifyWebApi()
+  return spotify.searchTracks(term, {limit: 1}) //returns a promise
+}
+
+function displayTrack(searchTerm, title,artist,link){
+  var hilightedTitle = title.split(' ').map(word => {
+    word = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+    if(word.toLowerCase() ===  searchTerm.toLowerCase()) {
+      console.log(word);
+      return `<span class="searchTerm">${word}</span>`
+    } else {
+      return word
+    }
+  }).join(' ')
+
+  var html = `
+    <li>
+      <a class="track" href="${link}" target="_blank">${hilightedTitle}</a> <span class="artist"> by ${artist} </span>
+    </li>
+  `
+  result.innerHTML += html
 }

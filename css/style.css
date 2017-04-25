@@ -1,20 +1,75 @@
+html {
+  height: 100%;
+}
+
 body {
-  padding-top: 40px;
-  background:#ffc600;
+  font-family:'helvetica neue';
+  height: 100%;
+  background: #67D5B5;
 }
 
 .main {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+  padding-top: 70px
 }
 
 input {
-  display: block;
   width: 100%;
+  padding: 10px;
+  font-size: 25px;
+  display: block;
 }
 
 .btn {
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 15px;
   display: block;
+  font-size: 25px;
+  padding: 8px 30px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: white;
+}
+
+.btn:hover {
+  background: #0ba360;
+}
+
+.result-list {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.result li {
+  list-style: none;
+  padding: 5px;
+  font-size: 25px;
+  font-weight: 100;
+
+}
+
+span.searchTerm {
+  color: red;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+span.artist {
+  color: grey;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+a.track {
+  color: rgb(223, 232, 224);
+}
+
+.about {
+  color: white;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.3em;
 }
