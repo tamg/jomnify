@@ -14,7 +14,12 @@ body {
   padding-top: 20px
 }
 
-.about {
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.about, .share {
   color: #6E7783;
   margin-top: 20px;
   font-size: 20px;
@@ -22,7 +27,7 @@ body {
   line-height: 1.3em;
 }
 
-.about a {
+.about a, .share a {
   color: white;
   font-weight: 100;
 }

@@ -2,19 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Jominfy</title>
+    <title>Jominfy - Create Secret Spotify Messages</title>
   </head>
+  <link rel="shortcut icon" href="/favicon.png">
   <link rel="stylesheet" href="./css/style.css">
   <body>
     <div class="main">
+      <a href="/"><img src="./img/icon.png" height="80" width="80" ></a>
       <div class="about">
         <p> Inspired <a href="https://twitter.com/jonnysun/status/856382394022154243" target='_blank'>by this tweet</a> from Jomny Sun. </p>
         <p> Jomnify allows you to make a spotify playlist by searching for a sentence. Each track's title contains a word from the sentence you searched. </p>
-        <p> Then click on a song to listen to it on spotify. </p>
+        <p> Then click on a song to listen to it on spotify. Or share the link with friends</p>
         <p> Created by <a href='https://twitter.com/tamrrat' target='_blank'> @tamrrat</a> at the <a href='https://www.recurse.com/' target='_blank'>Recurse center.</a> Github <a href='https://github.com/tamg/jomnify' target='_blank'>link</a> </p>
       </div>
-      <input type="text" name="" class="txt" placeholder="search and the song list will appear below">
-      <button type="button" name="button" class="btn" id="search">jomnify</button>
+      <input type="text" name="" class="txt" placeholder="search and the spotify playlist will appear below">
+      <button type="button" name="button" class="btn" id="submit">jomnify</button>
+      <div class="share">
+        <p> Share this playlist with friends! <a href='/'> Secret Spotify Playlist Message </a> </p>
+      </div>
       <ul class="result">
         <li>
           <a class="track" href="https://open.spotify.com/track/0SuLAslEMFZAXf0SwY7syi" target="_blank"><span class="searchTerm">All</span> Time Low</a> <span class="artist"> by Jon Bellion </span>
